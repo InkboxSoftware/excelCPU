@@ -11,7 +11,7 @@ Sample Programs - Folder of sample programs for the Excel CPU
 
 The CPU.xlsx file features a 16-bit CPU, 16 general purpose registers, 128KB of RAM, and a 128x128 display.
 
-Iterative Calcuation must be turned on. This can be done by going to File -> Options -> Formulas -> then Enable Iterative Calculation and **set Maximum Iterations to 1**
+Iterative Calculation must be turned on. This can be done by going to File -> Options -> Formulas -> then Enable Iterative Calculation and **set Maximum Iterations to 1**
 
 The CPU runs off a clock signal set in B2. This clock signal will update under the normal conditions of recalculation within an Excel spreadsheet. Pressing the F9 key will recalculate the spreadsheet. 
 
