@@ -4,12 +4,12 @@ ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "[Inkbox]
 
 O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
-CPU.xlsx - Planilha principal que contém a CPU
-ROM.xlsx - Planilha ROM é lida pela CPU quando a chave de leitura da ROM está ligada
-InstructionSet.xlsx - Explica o conjunto de instruções (ISA) da CPU
+CPU.xlsx             - Planilha principal que contém a CPU
+ROM.xlsx             - Planilha ROM é lida pela CPU quando a chave de leitura da ROM está ligada
+InstructionSet.xlsx  - Explica o conjunto de instruções (ISA) da CPU
 compileExcelASM16.py - O compilador Excel-ASM16
-Excel-ASM16.xml - Markdown para a linguagem Excel-ASM16 compatível com o Notepad++
-Sample Programs - Pasta de programas de exemplo para a CPU Excel
+Excel-ASM16.xml      - Markdown para a linguagem Excel-ASM16 compatível com o Notepad++
+Sample Programs      - Pasta de programas de exemplo para a CPU Excel
 ```
 
 O arquivo CPU.xlsx apresenta uma CPU de 16 bits, 16 registradores de propósito geral, 128 KB de RAM e um display de 128x128.
