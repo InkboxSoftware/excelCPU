@@ -41,9 +41,8 @@ Existem três operandos diferentes que são usados em cada instrução
                 ; em hexadecimal)
 	Exemplo: @0000, @F000, @FFFF, &c.
 
-	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento, exceto
-                ; no caso de ROL e ROR, que podem ser expressos tanto em decimal quanto em
-                ; hexadecimal
+	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento, exceto no caso de
+                ; ROL e ROR, que podem ser expressos tanto em decimal quanto em hexadecimal
 	Exemplo. #0000, $0CCC, #60340, $FF10, &c.
 ```
 ### LOAD (CARREGAMENTO)
