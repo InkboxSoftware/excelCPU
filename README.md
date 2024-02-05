@@ -34,15 +34,15 @@ Alternativamente, programas podem ser escritos na linguagem Excel-ASM16 e compil
 O Excel-ASM16 possui 24 instruções diferentes, sem diferenciar maiúsculas de minúsculas. 
 Existem três operandos diferentes que são usados em cada instrução
 ```
-	REG	; refers to any of the 16 general purpose registers
-	E.G. R0, R1, R15 &c.
+	REG	; refere-se a qualquer um dos 16 registradores de propósito geral
+	Exemplo: R0, R1, R15 &c.
 	
-	MEM	; refers to any 16-bit addressable memory unit (formatted in hexadecimal)
-	E.G. @0000, @F000, @FFFF, &c.
+	MEM	; refere-se a qualquer unidade de memória endereçável de 16 bits (formatada em hexadecimal)
+	Exemplo: @0000, @F000, @FFFF, &c.
 
-	IMD	; refers to an immediate number usually 16-bits long, except in the case of ROL and ROR
-		; can be defined either in decimal or hexadecimal
-	E.G. #0000, $0CCC, #60340, $FF10, &c.
+	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento, exceto no caso de ROL e ROR,
+		; que podem ser expressos tanto em decimal quanto em hexadecimal
+	Exemplo. #0000, $0CCC, #60340, $FF10, &c.
 ```
 ### LOAD
 ```
