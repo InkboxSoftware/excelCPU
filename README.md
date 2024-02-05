@@ -1,4 +1,7 @@
 # Excel 16-Bit CPU
+
+ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "Inkbox[https://github.com/InkboxSoftware]" TRADUZIDO PARA A LÍNGUA PORTUGUESA SEM A REALIZAÇÃO DE NENHUMA ALTERAÇÃO LÓGICA NO MATERIAL ORIGINAL, EXCETO EM SEU TEXTO EM INGLÊS.
+
 O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
 CPU.xlsx - Planilha principal que contém a CPU
