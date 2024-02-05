@@ -77,7 +77,8 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 ### MULT
 ```
-	MULT REG REG	; REGA * REGB, resultado armazenado de 16 bits mais baixo em REGA, resultado armazenado de 16 bits mais alts em REGB
+	MULT REG REG	; REGA * REGB, resultado armazenado de 16 bits mais baixo em REGA,
+                        ; resultado armazenado de 16 bits mais alts em REGB
 ```
 ### DIV
 ```
@@ -112,12 +113,12 @@ Existem três operandos diferentes que são usados em cada instrução
 ### ROL
 ```
 	ROL REG IMD	; rotação para a esquerda dos bits de REGA realizada IMD vezes
-				; MD é um valor de 4 bit
+			; MD é um valor de 4 bit
 ```
 ### ROR
 ```
 	ROR REG IMD	; rotação para a direita dos bits de REGA realizada IMD vezes
-				; MD é um valor de 4 bit
+			; MD é um valor de 4 bit
 ```
 ### INSTRUÇÕES DE FLAG (BANDEIRA)
 ```
