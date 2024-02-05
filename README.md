@@ -140,7 +140,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 
 ### Compilação
-Após ter escrito um programa, ele é compilado com a instrução de linha de comando
+Após escrever um programa, compile-o com a instrução de linha de comando:
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
 ```
