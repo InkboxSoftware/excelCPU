@@ -86,11 +86,11 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 ### INC
 ```
-	INC REG	; REGA++, CF não é afetado
+	INC REG		; REGA++, CF não é afetado
 ```
 ### DEC
 ```
-	DEC REG	; REGA--, CF não é afetado
+	DEC REG		; REGA--, CF não é afetado
 ```
 ### INSTRUÇÕES BIT A BIT (BITWISE)
 ### AND
@@ -99,7 +99,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 ### OR
 ```
-	OR REG REG		; REGA OR REGB, resultado armazenado em REGA
+	OR REG REG	; REGA OR REGB, resultado armazenado em REGA
 ```
 ### XOR
 ```
@@ -107,7 +107,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 ### NOT
 ```
-	NOT REG 		; NOT REGA, resultado armazenado em REGA
+	NOT REG 	; NOT REGA, resultado armazenado em REGA
 ```
 ### INSTRUÇÕES ROLL (ROTAÇÕES)
 ### ROL
@@ -122,37 +122,31 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 ### INSTRUÇÕES DE FLAG (BANDEIRA)
 ```
-	CLC			; põe CF com 0
-	STC			; põe CF com 1 
+	CLC		; põe CF com 0
+	STC		; põe CF com 1 
 ```
 ### NOP
 ```
-	NOP			; does not effect any registers or memory
+	NOP		; não afeta nenhum registrador ou memória
 ```
 ### ORG
 ```
-	ORG IMD		; sets the location of the next instruction
-				; must be further than the current length of program
+	ORG IMD		; define a localização da próxima instrução
+			; deve estar mais distante do que o comprimento atual do programa
 ```
 ### INC
 ```
-	INC "file.bin"	; copies the binary file into the program
+	INC "file.bin"	; copia o arquivo binário para o programa
 ```
 
 ### Compilação
-After having written a program, it is compiled with the commandline instruction
+Após ter escrito um programa, ele é compilado com a instrução de linha de comando
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
 ```
-Where **program.s** is the user's program file, and ROM.xlsx is the ROM spreadsheet
+Onde **program.s** é o arquivo do programa do usuário, e ROM.xlsx é a planilha da ROM
 
-After compiling successfully, the program can be transferred into the CPU.xlsx program by flipping the Read ROM button at the top of the spreadsheet. Note, the ROM.xlsx file must be open for the data to update correctly. 
-
-
-
-
-
-
+Após a compilação bem-sucedida, o programa pode ser transferido para a planilha CPU.xlsx ao acionar o botão "Read ROM " na parte superior da planilha. Observe que o arquivo ROM.xlsx deve estar aberto para que os dados sejam atualizados corretamente
 
 
 
