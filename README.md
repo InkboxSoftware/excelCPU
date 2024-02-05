@@ -13,9 +13,9 @@ O arquivo CPU.xlsx apresenta uma CPU de 16 bits, 16 registradores de propósito 
 
 O Cálculo Iterativo deve estar ativado. Isso pode ser feito a partir de: "Arquivo" -> "Opções" -> "Fórmulas" -> selecionar "Habilitar cálculo interativo" e alterar **"Número Máximo de interações"** em **"1"** 
 
-The CPU runs off a clock signal set in B2. This clock signal will update under the normal conditions of recalculation within an Excel spreadsheet. Pressing the F9 key will recalculate the spreadsheet. 
+A CPU é alimentada por um clock definido em "B2". Este sinal do clock será atualizado nas condições normais de recálculo de uma planilha do Excel. Pressionar a tecla "F9" irá recalcular a planilha. 
 
-The Reset Button in the F2 cell, if set to true, will reset the PC register back to 0. 
+O botão "Reset" na célula "F2", se configurado como verdadeiro, irá reiniciar o registrador PC de volta para 0. 
 
 The computer in the CPU.xlsx file can be controlled either in automatic or manual mode. This is controlled by the button in J2. If set to true, when the clock signal from B2 is high, then the CPU will carry out the operation specified in the override slot in the Fetch Unit in cell D8. If false, then the CPU will execute the operation retrieved from the memory table as specified by the PC register. 
 
