@@ -29,10 +29,10 @@ A CPU é projetada para operar de acordo com a arquitetura do conjunto de instru
 
 Aviso (atençõa): Não é possível simplesmente pressionar a tecla "F9" continuamente, pois leva tempo para o Excel atualizar a grande quantidade de células, é recomendável aguardar até que o indicativo "Pronto" possa ser visto na linha de status no canto inferior esquerdo do Excel antes de continuar a pressionar a tecla "F9". 
 
-Alternatively, programs can be written in the Excel-ASM16 language and compiled to the ROM.xlsx spreadsheet.
+Alternativamente, programas podem ser escritos na linguagem Excel-ASM16 e compilados para a planilha ROM.xlsx.
 
-Excel-ASM16 features 24 different case-insensitive instructions. 
-There are three different operands that are used in each instruction
+O Excel-ASM16 possui 24 instruções diferentes, sem diferenciar maiúsculas de minúsculas. 
+Existem três operandos diferentes que são usados em cada instrução
 ```
 	REG	; refers to any of the 16 general purpose registers
 	E.G. R0, R1, R15 &c.
