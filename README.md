@@ -2,6 +2,8 @@
 
 ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "[Inkbox](https://github.com/InkboxSoftware)" TRADUZIDO PARA A LÍNGUA PORTUGUESA SEM A REALIZAÇÃO DE NENHUMA ALTERAÇÃO LÓGICA NO MATERIAL ORIGINAL, EXCETO EM SEU TEXTO EM INGLÊS.
 
+PARA MAIS DETALHES ASSISTA AO VÍDEO: [I built my own 16-Bit CPU in Excel](https://www.youtube.com/watch?v=5rg7xvTJ8SU&t=388s).
+
 ### PRÉ-REQUISITO
 
 - Tenha instalado em seu sistema além da Planilha Excel a linguagem Python
