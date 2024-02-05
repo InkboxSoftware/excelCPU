@@ -1,12 +1,12 @@
 # Excel 16-Bit CPU
-The Excel 16-Bit CPU repository contains the following main files:
+O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
-CPU.xlsx - The main spreadsheet which contains the CPU
-ROM.xlsx - The ROM spreadsheet used read by the CPU when the read ROM switch is turned on
-InstructionSet.xlsx - Explains the ISA of the CPU
-compileExcelASM16.py - The Excel-ASM16 compiler
-Excel-ASM16.xml - Markdown for the Excel-ASM16 language compatible with Notepad++
-Sample Programs - Folder of sample programs for the Excel CPU
+CPU.xlsx - A planilha principal que contém a CPU.
+ROM.xlsx - A planilha ROM é lida pela CPU quando a chave de leitura da ROM está ligada.
+InstructionSet.xlsx - Explica o conjunto de instruções (ISA) da CPU.
+compileExcelASM16.py - O compilador Excel-ASM16.
+Excel-ASM16.xml - Markdown para a linguagem Excel-ASM16 compatível com o Notepad++.
+Sample Programs - Pasta de programas de exemplo para a CPU Excel
 ```
 
 The CPU.xlsx file features a 16-bit CPU, 16 general purpose registers, 128KB of RAM, and a 128x128 display.
