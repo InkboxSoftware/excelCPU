@@ -44,29 +44,29 @@ Existem três operandos diferentes que são usados em cada instrução
 		; que podem ser expressos tanto em decimal quanto em hexadecimal
 	Exemplo. #0000, $0CCC, #60340, $FF10, &c.
 ```
-### LOAD
+### LOAD (CARREGAMENTO)
 ```
-	LOAD REG MEM	; loads the specified memory unit into REG
-	LOAD REG IMD	; load specified 16-bit immediate value into REG
-	LOAD REG REG	; loads memory unit at the address stored in REGB into REGA
+	LOAD REG MEM	; carrega a unidade de memória especificada em REG
+	LOAD REG IMD	; carrega o valor imediato de 16 bits especificado em REG
+	LOAD REG REG	; carrega a unidade de memória no endereço armazenado em REGB em REGA
 ```
-### STORE
+### STORE (ARMAZENAMENTO)
 ```
-	STORE REG MEM	; stores the value of REG to the address specified
-	STORE REG REG 	; stores the value of REGA into the memory unit at the address in REGB
+	STORE REG MEM	; armazena o valor de REG no endereço especificado
+	STORE REG REG 	; armazena o valor de REGA na unidade de memória no endereço em REGB
 ```
-### JUMP
+### JUMP (SALTO)
 ```
-	JMP IMD		; sets PC to the immediate 16-bit value
-	JEQ IMD		; if ZF = 0, sets PC to the immediate 16-bit value
-	JLT IMD		; if CF = 0, sets PC to the immediate 16-bit value 
-	JGE IMD		; if CF = 1 or ZF = 1, sets PC to the immediate 16-bit value 
+	JMP IMD		; define registrador PC para o valor imediato de 16 bits
+	JEQ IMD		; se ZF = 0, define PC para o valor imediato de 16 bits
+	JLT IMD		; se CF = 0, define PC para o valor imediato de 16 bits 
+	JGE IMD		; se CF = 1 ou ZF = 1, define PC para o valor imediato de 16 bits 
 ```
-### TRAN
+### TRAN (TRANSFERÊNCIA)
 ```
-	TRAN REG REG	; transfers value from REGA to REGB
+	TRAN REG REG	; transfere o valor de REGA para REGB
 ```
-### ALGEBRAIC INSTRUCTIONS
+### INSTRUÇÕES ALGÉBRICAS
 ### ADD
 ```
 	ADD REG REG	; REGA + REGB + CF, result stored in REGA
@@ -91,7 +91,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 	DEC REG	; REGA--, CF not affected
 ```
-### BITWISE INSTRUCTIONS
+### INSTRUÇÕES BIT A BIT (BITWISE)
 ### AND
 ```
 	AND REG REG	; REGA AND REGB, result stored in REGA
@@ -108,7 +108,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 	NOT REG 		; NOT REGA, result stored in REGA
 ```
-### ROLL INSTRUCTIONS
+### INSTRUÇÕES ROLL (Rotacionar à Esquerda)
 ### ROL
 ```
 	ROL REG IMD	; leftwise roll of bits of REGA carried out IMD times
@@ -119,7 +119,7 @@ Existem três operandos diferentes que são usados em cada instrução
 	ROR REG IMD	; rightwise roll of bits of REGA carried out IMD times
 				; IMD is a 4-bit value
 ```
-### Flag instructions
+### INSTRUÇÕES DE FLAG (BANDEIRA)
 ```
 	CLC			; sets CF to 0
 	STC			; sets CF to 1 
@@ -138,7 +138,7 @@ Existem três operandos diferentes que são usados em cada instrução
 	INC "file.bin"	; copies the binary file into the program
 ```
 
-### Compiling
+### Compilação
 After having written a program, it is compiled with the commandline instruction
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
