@@ -2,6 +2,11 @@
 
 ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "[Inkbox](https://github.com/InkboxSoftware)" TRADUZIDO PARA A LÍNGUA PORTUGUESA SEM A REALIZAÇÃO DE NENHUMA ALTERAÇÃO LÓGICA NO MATERIAL ORIGINAL, EXCETO EM SEU TEXTO EM INGLÊS.
 
+### PRÉ-REQUISITO
+
+- Tenha instalado em seu sistema além da Planilha Excel a linguagem Python
+- Tenha instalado a biblioteca "openpyxl" (python -m pip install openpyxl)
+
 O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
 CPU.xlsx             - Planilha principal que contém a CPU
@@ -147,6 +152,10 @@ Existem três operandos diferentes que são usados em cada instrução
 Após escrever um programa, compile-o com a instrução de linha de comando:
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
+```
+Dependendo da instalação Python use:
+```
+	python compileExcelASM16.py program.s ROM.xlsx
 ```
 Onde **program.s** é o arquivo do programa do usuário, e ROM.xlsx é a planilha da ROM
 
