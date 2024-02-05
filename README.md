@@ -37,13 +37,13 @@ Existem três operandos diferentes que são usados em cada instrução
 	REG	; refere-se a qualquer um dos 16 registradores de propósito geral
 	Exemplo: R0, R1, R15 &c.
 	
-	MEM	; refere-se a qualquer unidade de memória endereçável de 16 bits
-                ; (formatada em hexadecimal)
+	MEM	; refere-se a qualquer unidade de memória endereçável de 16 bits (formatada
+                ; em hexadecimal)
 	Exemplo: @0000, @F000, @FFFF, &c.
 
-	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento,
-                ; exceto no caso de ROL e ROR, que podem ser expressos tanto em decimal
-                ; quanto em hexadecimal
+	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento, exceto
+                ; no caso de ROL e ROR, que podem ser expressos tanto em decimal quanto em
+                ; hexadecimal
 	Exemplo. #0000, $0CCC, #60340, $FF10, &c.
 ```
 ### LOAD (CARREGAMENTO)
@@ -111,7 +111,7 @@ Existem três operandos diferentes que são usados em cada instrução
 ```
 	NOT REG 	; NOT REGA, resultado armazenado em REGA
 ```
-### INSTRUÇÕES ROLL (ROTAÇÕES)
+### INSTRUÇÕES DE ROTAÇÃO
 ### ROL
 ```
 	ROL REG IMD	; rotação para a esquerda dos bits de REGA realizada IMD vezes
@@ -148,7 +148,7 @@ Após escrever um programa, compile-o com a instrução de linha de comando:
 ```
 Onde **program.s** é o arquivo do programa do usuário, e ROM.xlsx é a planilha da ROM
 
-Após a compilação bem-sucedida, o programa pode ser transferido para a planilha CPU.xlsx ao acionar o botão "Read ROM " na parte superior da planilha. Observe que o arquivo ROM.xlsx deve estar aberto para que os dados sejam atualizados corretamente
+Após a compilação bem-sucedida, o programa pode ser transferido para a planilha CPU.xlsx ao acionar o botão "Read ROM" na parte superior da planilha. Observe que o arquivo ROM.xlsx deve estar aberto para que os dados sejam atualizados corretamente
 
 
 
