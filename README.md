@@ -17,19 +17,17 @@ A CPU é alimentada por um clock definido em "B2". Este sinal do clock será atu
 
 O botão "Reset" na célula "F2", se configurado como verdadeiro, irá reiniciar o registrador PC de volta para 0. 
 
-The computer in the CPU.xlsx file can be controlled either in automatic or manual mode. This is controlled by the button in J2. If set to true, when the clock signal from B2 is high, then the CPU will carry out the operation specified in the override slot in the Fetch Unit in cell D8. If false, then the CPU will execute the operation retrieved from the memory table as specified by the PC register. 
+O computador CPU.xlsx pode ser controlado tanto no modo automático quanto em modo manual. Isso pode ser definido pelo botão em "J2". Se definido como verdadeiro, quando o sinal do clock em "B2" estiver alto, então a CPU realizará a operação especificada no slot de substituição na "Unidade de Busca" (Fetch Unit) na célula "D8". Se falso, então a CPU executará a operação obtida da tabela de memória, conforme especificado pelo registrador "PC". 
 
-The Reset RAM button, if set to true, will reset every memory unit to 0. 
+O botão "Reset RAM", se configurado como verdadeiro, irá reiniciar todas as unidades de memória para 0. 
 
-The Read ROM button, if set to true, will copy the values of the memory table in the ROM.xlsx spreadsheet onto the RAM table of the CPU.xlsx spreadsheet. 
+O botão "Read ROM", se configurado como verdadeiro, copiará os valores da tabela de memória na planilha ROM.xlsx para a tabela de RAM na planilha CPU.xlsx. 
 
-Normal operation of the CPU consists of setting the Reset Button to high, either flipping the Reset RAM or Read ROM buttons on and off again (causing the RAM to be reset or the ROM to be read into the RAM table), and then turning off the Reset Button. The CPU is then set up to either run a program in Manual mode, or will carry out the program specified in RAM. 
+A operação normal da CPU consiste em definir o botão "Reset" como alto, alternar os botões "Reset RAM" ou "Read ROM" ligando-od e desligando-os novamente (causa o reset da RAM ou a leitura da ROM para a tabela de RAM) e, em seguida, desligar o botão "Reset". A CPU é então configurada para executar um programa no modo manual ou realizará o programa especificado na RAM. 
 
+A CPU é projetada para operar de acordo com a arquitetura do conjunto de instruções especificada na planilha InstructionSet.xlsx. 
 
-The CPU is designed to run according to the instruction set architecture specified in the InstructionSet.xlsx spreadsheet. 
-
-Warning: It is not possible to simply mash the F9 key as fast as possible, it takes time for Excel to update so many cells, it is recommended to wait until the text "Ready" can be seen in the bottom left corner of Excel can be seen before continuing to press the F9 key. 
-
+Aviso (atençõa): Não é possível simplesmente pressionar a tecla "F9" continuamente, pois leva tempo para o Excel atualizar a grande quantidade de células, é recomendável aguardar até que o indicativo "Pronto" possa ser visto na linha de status no canto inferior esquerdo do Excel antes de continuar a pressionar a tecla "F9". 
 
 Alternatively, programs can be written in the Excel-ASM16 language and compiled to the ROM.xlsx spreadsheet.
 
