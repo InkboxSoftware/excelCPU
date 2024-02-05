@@ -5,7 +5,7 @@ ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "[Inkbox]
 ### PRÉ-REQUISITO
 
 - Tenha instalado em seu sistema além da Planilha Excel a linguagem Python
-- Tenha instalado a biblioteca "openpyxl" (python -m pip install openpyxl)
+- Tenha instalada a biblioteca "openpyxl" (python -m pip install openpyxl)
 
 O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
