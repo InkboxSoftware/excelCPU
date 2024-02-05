@@ -69,60 +69,60 @@ Existem três operandos diferentes que são usados em cada instrução
 ### INSTRUÇÕES ALGÉBRICAS
 ### ADD
 ```
-	ADD REG REG	; REGA + REGB + CF, result stored in REGA
+	ADD REG REG	; REGA + REGB + CF, resultado armazenado em REGA
 ```
 ### SUB
 ```
-	SUB REG REG	; (REGA - REGB) - CF, result stored in REGA
+	SUB REG REG	; (REGA - REGB) - CF, resultado armazenado em REGA
 ```
 ### MULT
 ```
-	MULT REG REG	; REGA * REGB, low 16-bit result stored in REGA, high 16-bit result stored in REGB
+	MULT REG REG	; REGA * REGB, resultado armazenado de 16 bits mais baixo em REGA, resultado armazenado de 16 bits mais alts em REGB
 ```
 ### DIV
 ```
-	DIV REG REG	; REGA / REGB result stored in REGA, REGA MOD REGB stored in REGB
+	DIV REG REG	; REGA / REGB resultado armazenado em REGA, REGA MOD REGB armazenado em REGB
 ```
 ### INC
 ```
-	INC REG	; REGA++, CF not affected
+	INC REG	; REGA++, CF não é afetado
 ```
 ### DEC
 ```
-	DEC REG	; REGA--, CF not affected
+	DEC REG	; REGA--, CF não é afetado
 ```
 ### INSTRUÇÕES BIT A BIT (BITWISE)
 ### AND
 ```
-	AND REG REG	; REGA AND REGB, result stored in REGA
+	AND REG REG	; REGA AND REGB, resultado armazenado em REGA
 ```
 ### OR
 ```
-	OR REG REG		; REGA OR REGB, result stored in REGA
+	OR REG REG		; REGA OR REGB, resultado armazenado em REGA
 ```
 ### XOR
 ```
-	XOR REG REG	; REGA XOR REGB, result stored in REGA
+	XOR REG REG	; REGA XOR REGB, resultado armazenado em REGA
 ```
 ### NOT
 ```
-	NOT REG 		; NOT REGA, result stored in REGA
+	NOT REG 		; NOT REGA, resultado armazenado em REGA
 ```
-### INSTRUÇÕES ROLL (Rotacionar à Esquerda)
+### INSTRUÇÕES ROLL (ROTAÇÕES)
 ### ROL
 ```
-	ROL REG IMD	; leftwise roll of bits of REGA carried out IMD times
-				; IMD is a 4-bit value
+	ROL REG IMD	; rotação para a esquerda dos bits de REGA realizada IMD vezes
+				; MD é um valor de 4 bit
 ```
 ### ROR
 ```
-	ROR REG IMD	; rightwise roll of bits of REGA carried out IMD times
-				; IMD is a 4-bit value
+	ROR REG IMD	; rotação para a direita dos bits de REGA realizada IMD vezes
+				; MD é um valor de 4 bit
 ```
 ### INSTRUÇÕES DE FLAG (BANDEIRA)
 ```
-	CLC			; sets CF to 0
-	STC			; sets CF to 1 
+	CLC			; põe CF com 0
+	STC			; põe CF com 1 
 ```
 ### NOP
 ```
