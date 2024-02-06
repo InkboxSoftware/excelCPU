@@ -27,19 +27,19 @@ O Cálculo Iterativo deve estar ativado. Isso pode ser feito a partir de: "Arqui
 
 A CPU é alimentada por um clock definido em "B2". Este sinal do clock será atualizado nas condições normais de recálculo de uma planilha do Excel. Pressionar a tecla "F9" irá recalcular a planilha. 
 
-O botão "Reset" na célula "F2", se configurado como verdadeiro, irá reiniciar o registrador PC de volta para 0. 
+O rótulo "Reset" na célula "F2", se configurado como verdadeiro, irá reiniciar o registrador PC de volta para 0. Use na célula "F2" o valor "1" para verdadeiro e "0" para falso.
 
-O computador CPU.xlsx pode ser controlado tanto no modo automático quanto em modo manual. Isso pode ser definido pelo botão em "J2". Se definido como verdadeiro, quando o sinal do clock em "B2" estiver alto, então a CPU realizará a operação especificada no slot de substituição na "Unidade de Busca" (Fetch Unit) na célula "D8". Se falso, então a CPU executará a operação obtida da tabela de memória, conforme especificado pelo registrador "PC". 
+O computador CPU.xlsx pode ser controlado tanto no modo automático quanto em modo manual. Isso pode ser definido pelo rótulo "Manual" em "J2". Se definido como verdadeiro, quando o sinal do clock em "B2" estiver alto, então a CPU realizará a operação indicada no slot de substituição na "Unidade de Busca" (Fetch Unit) na célula "D8". Se falso, a CPU executará a operação obtida da tabela de memória, conforme especificado pelo registrador "PC". 
 
-O botão "Reset RAM", se configurado como verdadeiro, irá reiniciar todas as unidades de memória para 0. 
+O rótulo "Reset RAM", se configurado como verdadeiro ("1"), irá reiniciar todas as unidades de memória para 0. 
 
-O botão "Read ROM", se configurado como verdadeiro, copiará os valores da tabela de memória na planilha ROM.xlsx para a tabela de RAM na planilha CPU.xlsx. 
+O rótulo "Read ROM", se configurado como verdadeiro ("1"), copiará os valores da tabela de memória na planilha ROM.xlsx para a tabela de RAM na planilha CPU.xlsx. 
 
-A operação normal da CPU consiste em definir o botão "Reset" como alto, alternar os botões "Reset RAM" ou "Read ROM" ligando-od e desligando-os novamente (causa o reset da RAM ou a leitura da ROM para a tabela de RAM) e, em seguida, desligar o botão "Reset". A CPU é então configurada para executar um programa no modo manual ou realizará o programa especificado na RAM. 
+A operação normal da CPU consiste em definir o rótulo "Reset" como alto, alternar os botões "Reset RAM" ou "Read ROM" ligando-os e desligando-os novamente (causa o reset da RAM ou a leitura da ROM para a tabela de RAM) e, em seguida, desligar o rótulo "Reset". A CPU é então configurada para executar um programa no modo manual ou realizar o programa especificado na RAM. 
 
 A CPU é projetada para operar de acordo com a arquitetura do conjunto de instruções especificada na planilha InstructionSet.xlsx. 
 
-Aviso (atençõa): Não é possível simplesmente pressionar a tecla "F9" continuamente, pois leva tempo para o Excel atualizar a grande quantidade de células, é recomendável aguardar até que o indicativo "Pronto" possa ser visto na linha de status no canto inferior esquerdo do Excel antes de continuar a pressionar a tecla "F9". 
+Aviso (atençõa): Não é possível pressionar a tecla "F9" continuamente, pois sua ação leva certo tempo para ser atualizada pelo Excel, uma vez que é grande a quantidade de células. É recomendável aguardar até que o indicativo "Pronto" possa ser visto na linha de status no canto inferior esquerdo do Excel antes de continuar a pressionar a tecla "F9". 
 
 Alternativamente, programas podem ser escritos na linguagem Excel-ASM16 e compilados para a planilha ROM.xlsx.
 
