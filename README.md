@@ -1,159 +1,169 @@
 # Excel 16-Bit CPU
-The Excel 16-Bit CPU repository contains the following main files:
+
+ESTE REPOSITÓRIO APRESENTA O PROJETO "Excel 16-Bit CPU" DE AUTORIA DE "[Inkbox](https://github.com/InkboxSoftware)" TRADUZIDO PARA A LÍNGUA PORTUGUESA SEM A REALIZAÇÃO DE NENHUMA ALTERAÇÃO LÓGICA NO MATERIAL ORIGINAL, EXCETO EM SEU TEXTO EM INGLÊS.
+
+PARA MAIS DETALHES ASSISTA AO VÍDEO: [I built my own 16-Bit CPU in Excel](https://www.youtube.com/watch?v=5rg7xvTJ8SU&t=388s).
+
+### PRÉ-REQUISITO
+
+- Tenha instalado em seu sistema além da Planilha Excel a linguagem Python
+- Tenha instalada a biblioteca "openpyxl" (python -m pip install openpyxl)
+
+![CPU Excel](https://github.com/J-AugustoManzano/imagens/blob/main/CPU%20Excel.png)
+
+O repositório Excel 16-Bit CPU contém os seguintes arquivos:
 ```
-CPU.xlsx - The main spreadsheet which contains the CPU
-ROM.xlsx - The ROM spreadsheet used read by the CPU when the read ROM switch is turned on
-InstructionSet.xlsx - Explains the ISA of the CPU
-compileExcelASM16.py - The Excel-ASM16 compiler
-Excel-ASM16.xml - Markdown for the Excel-ASM16 language compatible with Notepad++
-Sample Programs - Folder of sample programs for the Excel CPU
+CPU.xlsx             - Planilha principal que contém a CPU
+ROM.xlsx             - Planilha ROM é lida pela CPU quando a opção de leitura da ROM está ligada
+InstructionSet.xlsx  - Explica o conjunto de instruções (ISA) da CPU
+compileExcelASM16.py - O compilador Excel-ASM16
+Excel-ASM16.xml      - Markdown para a linguagem Excel-ASM16 compatível com o Notepad++
+Sample Programs      - Pasta de programas de exemplo para a CPU Excel
 ```
 
-The CPU.xlsx file features a 16-bit CPU, 16 general purpose registers, 128KB of RAM, and a 128x128 display.
+O arquivo CPU.xlsx apresenta uma CPU de 16 bits, 16 registradores de propósito geral, 128 KB de RAM e um display de 128x128.
 
-Iterative Calcuation must be turned on. This can be done by going to File -> Options -> Formulas -> then Enable Iterative Calculation and **set Maximum Iterations to 1**
+O Cálculo Iterativo deve estar ativado. Isso pode ser feito a partir de: "Arquivo" -> "Opções" -> "Fórmulas" -> selecionar "Habilitar cálculo interativo" e alterar **"Número Máximo de interações"** em **"1"** 
 
-The CPU runs off a clock signal set in B2. This clock signal will update under the normal conditions of recalculation within an Excel spreadsheet. Pressing the F9 key will recalculate the spreadsheet. 
+A CPU é alimentada por um clock definido em "B2". Este sinal do clock será atualizado nas condições normais de recálculo de uma planilha do Excel. Pressionar a tecla "F9" irá recalcular a planilha. 
 
-The Reset Button in the F2 cell, if set to true, will reset the PC register back to 0. 
+O rótulo "Reset" na célula "F2", se configurado como verdadeiro, irá reiniciar o registrador PC de volta para 0. Use na célula "F2" o valor "1" para verdadeiro e "0" para falso.
 
-The computer in the CPU.xlsx file can be controlled either in automatic or manual mode. This is controlled by the button in J2. If set to true, when the clock signal from B2 is high, then the CPU will carry out the operation specified in the override slot in the Fetch Unit in cell D8. If false, then the CPU will execute the operation retrieved from the memory table as specified by the PC register. 
+O computador CPU.xlsx pode ser controlado tanto no modo automático quanto em modo manual. Isso pode ser definido pelo rótulo "Manual" em "J2". Se definido como verdadeiro, quando o sinal do clock em "B2" estiver alto, então a CPU realizará a operação indicada no slot de substituição na "Unidade de Busca" (Fetch Unit) na célula "D8". Se falso, a CPU executará a operação obtida da tabela de memória, conforme especificado pelo registrador "PC". 
 
-The Reset RAM button, if set to true, will reset every memory unit to 0. 
+O rótulo "Reset RAM", se configurado como verdadeiro ("1"), irá reiniciar todas as unidades de memória para 0. 
 
-The Read ROM button, if set to true, will copy the values of the memory table in the ROM.xlsx spreadsheet onto the RAM table of the CPU.xlsx spreadsheet. 
+O rótulo "Read ROM", se configurado como verdadeiro ("1"), copiará os valores da tabela de memória na planilha ROM.xlsx para a tabela de RAM na planilha CPU.xlsx. 
 
-Normal operation of the CPU consists of setting the Reset Button to high, either flipping the Reset RAM or Read ROM buttons on and off again (causing the RAM to be reset or the ROM to be read into the RAM table), and then turning off the Reset Button. The CPU is then set up to either run a program in Manual mode, or will carry out the program specified in RAM. 
+A operação normal da CPU consiste em definir o rótulo "Reset" como alto, alternar os botões "Reset RAM" ou "Read ROM" ligando-os e desligando-os novamente (causa o reset da RAM ou a leitura da ROM para a tabela de RAM) e, em seguida, desligar o rótulo "Reset". A CPU é então configurada para executar um programa no modo manual ou realizar o programa especificado na RAM. 
 
+A CPU é projetada para operar de acordo com a arquitetura do conjunto de instruções especificada na planilha InstructionSet.xlsx. 
 
-The CPU is designed to run according to the instruction set architecture specified in the InstructionSet.xlsx spreadsheet. 
+Aviso (atençõa): Não é possível pressionar a tecla "F9" continuamente, pois sua ação leva certo tempo para ser atualizada pelo Excel, uma vez que é grande a quantidade de células. É recomendável aguardar até que o indicativo "Pronto" possa ser visto na linha de status no canto inferior esquerdo do Excel antes de continuar a pressionar a tecla "F9". 
 
-Warning: It is not possible to simply mash the F9 key as fast as possible, it takes time for Excel to update so many cells, it is recommended to wait until the text "Ready" can be seen in the bottom left corner of Excel can be seen before continuing to press the F9 key. 
+Alternativamente, programas podem ser escritos na linguagem Excel-ASM16 e compilados para a planilha ROM.xlsx.
 
-
-Alternatively, programs can be written in the Excel-ASM16 language and compiled to the ROM.xlsx spreadsheet.
-
-Excel-ASM16 features 24 different case-insensitive instructions. 
-There are three different operands that are used in each instruction
+O Excel-ASM16 possui 24 instruções diferentes, sem diferenciar maiúsculas de minúsculas. 
+Existem três operandos diferentes que são usados em cada instrução
 ```
-	REG	; refers to any of the 16 general purpose registers
-	E.G. R0, R1, R15 &c.
+	REG	; refere-se a qualquer um dos 16 registradores de propósito geral
+	Exemplo: R0, R1, R15 &c.
 	
-	MEM	; refers to any 16-bit addressable memory unit (formatted in hexadecimal)
-	E.G. @0000, @F000, @FFFF, &c.
+	MEM	; refere-se a qualquer unidade de memória endereçável de 16 bits (formatada em
+                ; hexadecimal)
+	Exemplo: @0000, @F000, @FFFF, &c.
 
-	IMD	; refers to an immediate number usually 16-bits long, except in the case of ROL and ROR
-		; can be defined either in decimal or hexadecimal
-	E.G. #0000, $0CCC, #60340, $FF10, &c.
+	IMD	; refere-se a um número imediato geralmente com 16 bits de comprimento, exceto no
+                ; caso de ROL e ROR, que podem ser expressos tanto em decimal quanto em hexadecimal
+	Exemplo. #0000, $0CCC, #60340, $FF10, &c.
 ```
-### LOAD
+### LOAD (CARREGAMENTO)
 ```
-	LOAD REG MEM	; loads the specified memory unit into REG
-	LOAD REG IMD	; load specified 16-bit immediate value into REG
-	LOAD REG REG	; loads memory unit at the address stored in REGB into REGA
+	LOAD REG MEM	; carrega a unidade de memória especificada em REG
+	LOAD REG IMD	; carrega o valor imediato de 16 bits especificado em REG
+	LOAD REG REG	; carrega a unidade de memória no endereço armazenado em REGB em REGA
 ```
-### STORE
+### STORE (ARMAZENAMENTO)
 ```
-	STORE REG MEM	; stores the value of REG to the address specified
-	STORE REG REG 	; stores the value of REGA into the memory unit at the address in REGB
+	STORE REG MEM	; armazena o valor de REG no endereço especificado
+	STORE REG REG 	; armazena o valor de REGA na unidade de memória no endereço em REGB
 ```
-### JUMP
+### JUMP (SALTO)
 ```
-	JMP IMD		; sets PC to the immediate 16-bit value
-	JEQ IMD		; if ZF = 0, sets PC to the immediate 16-bit value
-	JLT IMD		; if CF = 0, sets PC to the immediate 16-bit value 
-	JGE IMD		; if CF = 1 or ZF = 1, sets PC to the immediate 16-bit value 
+	JMP IMD		; define registrador PC para o valor imediato de 16 bits
+	JEQ IMD		; se ZF = 0, define PC para o valor imediato de 16 bits
+	JLT IMD		; se CF = 0, define PC para o valor imediato de 16 bits 
+	JGE IMD		; se CF = 1 ou ZF = 1, define PC para o valor imediato de 16 bits 
 ```
-### TRAN
+### TRAN (TRANSFERÊNCIA)
 ```
-	TRAN REG REG	; transfers value from REGA to REGB
+	TRAN REG REG	; transfere o valor de REGA para REGB
 ```
-### ALGEBRAIC INSTRUCTIONS
+### INSTRUÇÕES ALGÉBRICAS
 ### ADD
 ```
-	ADD REG REG	; REGA + REGB + CF, result stored in REGA
+	ADD REG REG	; REGA + REGB + CF, resultado armazenado em REGA
 ```
 ### SUB
 ```
-	SUB REG REG	; (REGA - REGB) - CF, result stored in REGA
+	SUB REG REG	; (REGA - REGB) - CF, resultado armazenado em REGA
 ```
 ### MULT
 ```
-	MULT REG REG	; REGA * REGB, low 16-bit result stored in REGA, high 16-bit result stored in REGB
+	MULT REG REG	; REGA * REGB, resultado armazenado de 16 bits mais baixo em REGA,
+                        ; resultado armazenado de 16 bits mais alts em REGB
 ```
 ### DIV
 ```
-	DIV REG REG	; REGA / REGB result stored in REGA, REGA MOD REGB stored in REGB
+	DIV REG REG	; REGA / REGB resultado armazenado em REGA, REGA MOD REGB armazenado em REGB
 ```
 ### INC
 ```
-	INC REG	; REGA++, CF not affected
+	INC REG		; REGA++, CF não é afetado
 ```
 ### DEC
 ```
-	DEC REG	; REGA--, CF not affected
+	DEC REG		; REGA--, CF não é afetado
 ```
-### BITWISE INSTRUCTIONS
+### INSTRUÇÕES BIT A BIT (BITWISE)
 ### AND
 ```
-	AND REG REG	; REGA AND REGB, result stored in REGA
+	AND REG REG	; REGA AND REGB, resultado armazenado em REGA
 ```
 ### OR
 ```
-	OR REG REG		; REGA OR REGB, result stored in REGA
+	OR REG REG	; REGA OR REGB, resultado armazenado em REGA
 ```
 ### XOR
 ```
-	XOR REG REG	; REGA XOR REGB, result stored in REGA
+	XOR REG REG	; REGA XOR REGB, resultado armazenado em REGA
 ```
 ### NOT
 ```
-	NOT REG 		; NOT REGA, result stored in REGA
+	NOT REG 	; NOT REGA, resultado armazenado em REGA
 ```
-### ROLL INSTRUCTIONS
+### INSTRUÇÕES DE ROTAÇÃO
 ### ROL
 ```
-	ROL REG IMD	; leftwise roll of bits of REGA carried out IMD times
-				; IMD is a 4-bit value
+	ROL REG IMD	; rotação para a esquerda dos bits de REGA realizada IMD vezes
+			; MD é um valor de 4 bit
 ```
 ### ROR
 ```
-	ROR REG IMD	; rightwise roll of bits of REGA carried out IMD times
-				; IMD is a 4-bit value
+	ROR REG IMD	; rotação para a direita dos bits de REGA realizada IMD vezes
+			; MD é um valor de 4 bit
 ```
-### Flag instructions
+### INSTRUÇÕES DE FLAG (BANDEIRA)
 ```
-	CLC			; sets CF to 0
-	STC			; sets CF to 1 
+	CLC		; põe CF com 0
+	STC		; põe CF com 1 
 ```
 ### NOP
 ```
-	NOP			; does not effect any registers or memory
+	NOP		; não afeta nenhum registrador ou memória
 ```
 ### ORG
 ```
-	ORG IMD		; sets the location of the next instruction
-				; must be further than the current length of program
+	ORG IMD		; define a localização da próxima instrução
+			; deve estar mais distante do que o comprimento atual do programa
 ```
 ### INC
 ```
-	INC "file.bin"	; copies the binary file into the program
+	INC "file.bin"	; copia o arquivo binário para o programa
 ```
 
-### Compiling
-After having written a program, it is compiled with the commandline instruction
+### Compilação
+Após escrever um programa, compile-o com a instrução de linha de comando:
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
 ```
-Where **program.s** is the user's program file, and ROM.xlsx is the ROM spreadsheet
+Dependendo da instalação Python use:
+```
+	python compileExcelASM16.py program.s ROM.xlsx
+```
+Onde **program.s** é o arquivo do programa do usuário, e ROM.xlsx é a planilha da ROM
 
-After compiling successfully, the program can be transferred into the CPU.xlsx program by flipping the Read ROM button at the top of the spreadsheet. Note, the ROM.xlsx file must be open for the data to update correctly. 
-
-
-
-
-
-
+Após a compilação bem-sucedida, o programa pode ser transferido para a planilha CPU.xlsx ao acionar o botão "Read ROM" na parte superior da planilha. Observe que o arquivo ROM.xlsx deve estar aberto para que os dados sejam atualizados corretamente
 
 
 
