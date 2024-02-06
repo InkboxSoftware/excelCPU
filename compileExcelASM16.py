@@ -1,5 +1,6 @@
-#COMPILER FOR EXCEL-ASM16
-#USE:   py compileExcelASM16.py [program.s] ROM.xlsx
+#COMPILADOR: EXCEL-ASM16
+#USO 1:   py compileExcelASM16.py [program.s] ROM.xlsx
+#USO 2:   python compileExcelASM16.py [program.s] ROM.xlsx
 
 import sys
 import os
@@ -21,47 +22,47 @@ RED = '\033[91m';
 ENDCOLOR = '\033[0m';
 
 def integerError(lineNumber):
-    print(RED + "\tInteger outside of expected range, line: " + str(lineNumber)+ ENDCOLOR)
+    print(RED + "\tInteiro fora do intervalo esperado, linha: " + str(lineNumber)+ ENDCOLOR)
     compileResults()
     
 def syntaxError(lineNumber):
-    print(RED + "\tSyntax Error, line: " + str(lineNumber)+ ENDCOLOR)
+    print(RED + "\tErro de sintaxa, linha: " + str(lineNumber)+ ENDCOLOR)
     compileResults()  
     
 def labelError(lineNumber):
-    print(RED + "\tDouble label detected, line " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tDuplicação de rótulo detectada, linha " + str(lineNumber) + ENDCOLOR)
     compileResults()
     
 def referenceNotFoundError(labelName):
-    print(RED + "\tReference to variable or label not found, " + str(labelName) + ENDCOLOR)
+    print(RED + "\tReferência a variável ou rótulo não localizada, " + str(labelName) + ENDCOLOR)
     compileResults()
 
 def unrecognizedError(lineNumber):
-    print(RED + "\tUnrecognized Instruction, line " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tInstrução não reconhecida, linha " + str(lineNumber) + ENDCOLOR)
     compileResults()
 
 def varSequenceError(lineNumber):
-    print(RED + "\tVariables must be defined before program code, line " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tVariáveis devem ser definidas antes do código do programa, linha " + str(lineNumber) + ENDCOLOR)
     compileResults()
 
 def varUseError(varName):
-    print(RED + "\tVariable cannot be used like label, var: " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tVariável não pode ser usada como rótulo, var: " + str(lineNumber) + ENDCOLOR)
     compileResults()
 
 def orgError(lineNumber):
-    print(RED + "\tProgram Count exceeds target address, line " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tContagem do Programa excede o endereço alvo, linha " + str(lineNumber) + ENDCOLOR)
     compileResults()
     
 def incResourceError(resourceName, lineNumber):
-    print(RED + "\tResource " + resourceName + " could not be found, line " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tRecurso " + resourceName + " não foi encontrado, linha " + str(lineNumber) + ENDCOLOR)
     compileResults()    
 
 def lengthError(exceededWords):
-    print(RED + "\tProgram length exceeds available RAM by " + str(exceededWords) + " words" + ENDCOLOR)
+    print(RED + "\tO comprimento do programa excede a RAM disponível por " + str(exceededWords) + " words" + ENDCOLOR)
     compileResults()
 
 def ROMbookError():
-    print(RED + "\tCould not save to specified workbook, make sure the file is closed and try again" + ENDCOLOR)
+    print(RED + "\tNão foi possível salvar na pasta de trabalho especificada, certifique-se de que o arquivo esteja fechado e tente novamente" + ENDCOLOR)
     exit()
     
 def createLine(label, operations):
@@ -449,35 +450,35 @@ def sendToSpreadsheet():
 
 def compileResults():
     if (not(compiled)):
-        print(RED + "\tProgram could not be compiled" + ENDCOLOR)
+        print(RED + "\tO programa não pôde ser compilado" + ENDCOLOR)
     else:
-        print("\tProgram compiled Successfully")
+        print("\tPrograma compilado com sucesso")
         #print(output)
-    print("\tProgram length in words: " + str(getCurrentAddress()))
-    print("\tWriting to spreadsheet ROM...")
+    print("\tComprimento do programa em words: " + str(getCurrentAddress()))
+    print("\tEscrevendo na planilha ROM...")
     sendToSpreadsheet()
-    print("\tFinished in " + str(time.time()-startTime)[:6] + "s")
+    print("\tConcluído em " + str(time.time()-startTime)[:6] + "s")
     exit()
 
 if __name__ == "__main__":
     startTime = time.time()
     os.system('color')
-    print("\tStarting operation...")
+    print("\tIniciando operação...")
     
     if (len(sys.argv) == 3):
         filePath = sys.argv[1]
         spreadsheet = sys.argv[2]
     elif (len(sys.argv) == 1):
-        print(RED + "\tInsufficent arguments, no ASM file specified" + ENDCOLOR)
+        print(RED + "\tArgumentos insuficientes, nenhum arquivo ASM especificado" + ENDCOLOR)
         compileResults()
     elif (len(sys.argv) == 2):
-        print(RED + "\tInsufficent arguments, no target spreadsheet specified" + ENDCOLOR)
+        print(RED + "\tArgumentos insuficientes, nenhuma planilha de destino especificada" + ENDCOLOR)
         compileResults()
     else:
-        print(RED + "\tArguments too many" + ENDCOLOR)
+        print(RED + "\tArgumentos em excesso" + ENDCOLOR)
         compileResults()
     
     if (not(os.path.isfile(filePath))):
-        print(RED + "\tFile " + filePath + " not found" + ENDCOLOR)
+        print(RED + "\tArquivo " + filePath + " não encontrado" + ENDCOLOR)
         compileResults()
     compileASM(filePath)
