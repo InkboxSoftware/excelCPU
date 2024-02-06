@@ -11,7 +11,7 @@ PARA MAIS DETALHES ASSISTA AO VÍDEO: [I built my own 16-Bit CPU in Excel](https
 
 ![CPU Excel](https://github.com/J-AugustoManzano/imagens/blob/main/CPU%20Excel.png)
 
-O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
+O repositório Excel 16-Bit CPU contém os seguintes arquivos:
 ```
 CPU.xlsx             - Planilha principal que contém a CPU
 ROM.xlsx             - Planilha ROM é lida pela CPU quando a opção de leitura da ROM está ligada
