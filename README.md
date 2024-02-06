@@ -9,6 +9,8 @@ PARA MAIS DETALHES ASSISTA AO VÍDEO: [I built my own 16-Bit CPU in Excel](https
 - Tenha instalado em seu sistema além da Planilha Excel a linguagem Python
 - Tenha instalada a biblioteca "openpyxl" (python -m pip install openpyxl)
 
+![CPU Excel](https://github.com/J-AugustoManzano/imagens/blob/main/CPU%20Excel.png)
+
 O repositório Excel 16-Bit CPU contém os seguintes arquivos principais:
 ```
 CPU.xlsx             - Planilha principal que contém a CPU
