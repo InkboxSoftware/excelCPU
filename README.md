@@ -141,6 +141,10 @@ There are three different operands that are used in each instruction
 ```
 
 ### Compiling
+To compile, you must have the openpyxl library installed. You can do this with the following command:
+```
+	py -m pip install openpyxl
+```
 After having written a program, it is compiled with the commandline instruction
 ```
 	py compileExcelASM16.py program.s ROM.xlsx
