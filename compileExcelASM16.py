@@ -45,7 +45,7 @@ def varSequenceError(lineNumber):
     compileResults()
 
 def varUseError(varName):
-    print(RED + "\tVariable cannot be used like label, var: " + str(lineNumber) + ENDCOLOR)
+    print(RED + "\tVariable cannot be used like label, var: " + str(varName) + ENDCOLOR)
     compileResults()
 
 def orgError(lineNumber):
