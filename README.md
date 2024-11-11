@@ -2,7 +2,7 @@
 The Excel 16-Bit CPU repository contains the following main files:
 ```
 CPU.xlsx - The main spreadsheet which contains the CPU
-ROM.xlsx - The ROM spreadsheet used read by the CPU when the read ROM switch is turned on
+ROM.xlsx - The ROM spreadsheet read by the CPU when the read ROM switch is turned on
 InstructionSet.xlsx - Explains the ISA of the CPU
 compileExcelASM16.py - The Excel-ASM16 compiler
 Excel-ASM16.xml - Markdown for the Excel-ASM16 language compatible with Notepad++
